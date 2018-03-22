@@ -58,6 +58,7 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapInfoWindow;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapMarker;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolygon;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
+import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapCircle;
 
 public class GoogleMapWidget extends FlowPanel implements RequiresResize {
 
@@ -70,6 +71,7 @@ public class GoogleMapWidget extends FlowPanel implements RequiresResize {
     protected Map<GoogleMapMarker, Marker> gmMarkerMap = new HashMap<>();
     protected Map<Polygon, GoogleMapPolygon> polygonMap = new HashMap<>();
     protected Map<Polyline, GoogleMapPolyline> polylineMap = new HashMap<>();
+    protected Map<Circle, GoogleMapCircle> circleMap = new HashMap<>();
 
 
     protected Map<CustomInfoWindow, GoogleMapInfoWindow> infoWindowMap = new HashMap<>();
@@ -542,6 +544,40 @@ public class GoogleMapWidget extends FlowPanel implements RequiresResize {
             polyline.setMap(map);
 
             polylineMap.put(polyline, overlay);
+        }
+    }
+
+    public void setCircleOverlays(Set<GoogleMapCircle> circleOverlays) {
+        if (circleOverlays.size() == circleMap.size()
+                && circleMap.values().containsAll(circleOverlays)) {
+            return;
+        }
+
+        for (Circle circle : circleMap.keySet()) {
+            circle.setMap(null);
+        }
+        circleMap.clear();
+
+        for (GoogleMapCircle overlay : circleOverlays) {
+            LatLng center = LatLng.newInstance(
+                    overlay.getCenter().getLat(),
+                    overlay.getCenter().getLon());
+            CircleOptions options = CircleOptions.newInstance();
+            options.setCenter(center);
+            options.setRadius(overlay.getRadius());
+            options.setStrokeColor(overlay.getStrokeColor());
+            options.setStrokeOpacity(overlay.getStrokeOpacity());
+            options.setStrokeWeight(overlay.getStrokeWeight());
+            options.setFillColor(overlay.getFillColor());
+            options.setFillOpacity(overlay.getFillOpacity());
+            options.setClickable(false);
+            options.setZindex(overlay.getzIndex());
+
+            Circle circle = Circle.newInstance(options);
+            circle.setEditable(false);
+            circle.setMap(map);
+
+            circleMap.put(circle, overlay);
         }
     }
 
