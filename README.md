@@ -1,13 +1,3 @@
-# THIS REPOSITORY HAS MOVED
-
-This project is no longer being maintained here. It has moved to [https://github.com/parttio/Google-Maps-for-Vaadin](https://github.com/parttio/Google-Maps-for-Vaadin)
-
-No updates will be made to this repository.
-Filed issues will be ignored.
-
-
-
-
 # Google Maps Add-on for Vaadin 7
 
 Enables Google Maps in Vaadin 7 projects via JavaScript API 3!
@@ -35,6 +25,7 @@ In order to use Google Maps API, you'll need to get an API key from [Google Deve
 * Markers with custom captions and icons, togglable dragging, drop animation and optimized rendering.
 * Info windows with HTML content, marker anchoring and z-index.
 * Polygon and polyline overlays.
+* Circle overlays.
 * KML layers from external URLs.
 * Forcing the localization of the map.
 * Toggling dragging of the map with mouse, keyboard shortcuts and scroll wheel zoom.
