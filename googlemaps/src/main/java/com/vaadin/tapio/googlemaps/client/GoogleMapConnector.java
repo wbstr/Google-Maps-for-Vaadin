@@ -149,6 +149,7 @@ public class GoogleMapConnector extends AbstractComponentContainerConnector
         getWidget().setMarkers(getState().markers.values());
         getWidget().setPolygonOverlays(getState().polygons);
         getWidget().setPolylineOverlays(getState().polylines);
+        getWidget().setCircleOverlays(getState().circles);
         getWidget().setKmlLayers(getState().kmlLayers);
         getWidget().setMapType(getState().mapTypeId);
         getWidget().setControls(getState().controls);

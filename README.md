@@ -25,6 +25,7 @@ In order to use Google Maps API, you'll need to get an API key from [Google Deve
 * Markers with custom captions and icons, togglable dragging, drop animation and optimized rendering.
 * Info windows with HTML content, marker anchoring and z-index.
 * Polygon and polyline overlays.
+* Circle overlays.
 * KML layers from external URLs.
 * Forcing the localization of the map.
 * Toggling dragging of the map with mouse, keyboard shortcuts and scroll wheel zoom.

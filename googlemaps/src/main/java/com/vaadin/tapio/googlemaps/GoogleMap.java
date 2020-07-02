@@ -23,6 +23,7 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapInfoWindow;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapMarker;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolygon;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
+import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapCircle;
 import com.vaadin.tapio.googlemaps.client.rpcs.InfoWindowClosedRpc;
 import com.vaadin.tapio.googlemaps.client.rpcs.MapClickedRpc;
 import com.vaadin.tapio.googlemaps.client.rpcs.MapMovedRpc;
@@ -431,6 +432,24 @@ public class GoogleMap extends AbstractComponentContainer {
      */
     public void removePolyline(GoogleMapPolyline polyline) {
         getState().polylines.remove(polyline);
+    }
+
+    /**
+     * Adds a circle to the map.
+     *
+     * @param circle The GoogleMapCircle to add.
+     */
+    public void addCircle(GoogleMapCircle circle) {
+        getState().circles.add(circle);
+    }
+
+    /**
+     * Removes a circle to the map.
+     *
+     * @param circle The GoogleMapCircle to remove.
+     */
+    public void removeCircle(GoogleMapCircle circle) {
+        getState().circles.remove(circle);
     }
 
     /**

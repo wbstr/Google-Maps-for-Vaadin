@@ -12,6 +12,7 @@ import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapInfoWindow;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapMarker;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolygon;
 import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapPolyline;
+import com.vaadin.tapio.googlemaps.client.overlays.GoogleMapCircle;
 
 /**
  * The shared state of the Google Maps. Contains also the default values.
@@ -52,6 +53,7 @@ public class GoogleMapState extends AbstractComponentContainerState {
 
     public Set<GoogleMapPolygon> polygons = new HashSet<GoogleMapPolygon>();
     public Set<GoogleMapPolyline> polylines = new HashSet<GoogleMapPolyline>();
+    public Set<GoogleMapCircle> circles = new HashSet<GoogleMapCircle>();
     public Set<GoogleMapKmlLayer> kmlLayers = new HashSet<GoogleMapKmlLayer>();
 
     public Map<Long, GoogleMapMarker> markers = new HashMap<Long, GoogleMapMarker>();
